@@ -89,17 +89,21 @@ export const Task = () => {
                 <div
                   {...provided.droppableProps}
                   ref={provided.innerRef}
+                  className="bg-[#babaf8] rounded-lg shadow-lg"
                   style={{
                     margin: "8px",
-                    border: "1px solid lightgrey",
-                    borderRadius: "2px",
                     width: "220px",
                     display: "flex",
                     flexDirection: "column",
                   }}
                 >
-                  <h3 style={{ padding: "8px" }}>{column.title}</h3>
-                  <div style={{ padding: "8px" }}>
+                  <h3
+                    style={{ padding: "8px" }}
+                    className="font-bold text-[#49108B]"
+                  >
+                    {column.title}
+                  </h3>
+                  <div style={{ padding: "8px", minHeight: "200px" }}>
                     {tasks.map((task, index) => (
                       <Draggable
                         key={task.id}
@@ -111,17 +115,23 @@ export const Task = () => {
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
+                            className="bg-[#f8f8f8] rounded-lg shadow-lg"
                             style={{
                               userSelect: "none",
                               padding: "16px",
                               margin: "0 0 8px 0",
                               minHeight: "50px",
-                              backgroundColor: "white",
                               color: "black",
                               ...provided.draggableProps.style,
                             }}
                           >
-                            {task.content}
+                            <div className="font-bold text-[14px] mb-2">
+                              {task.content}
+                            </div>
+                            <div className="w-full flex justify-between items-center text-[12px] text-[#49108B]">
+                              <div>Mon</div>
+                              <div>PG</div>
+                            </div>
                           </div>
                         )}
                       </Draggable>

@@ -24,3 +24,9 @@ export const initialData = {
   },
   columnOrder: ["column-1", "column-2", "column-3"],
 };
+
+export const updatedInitialData = {
+  "Personal Task": {},
+  Business: {},
+  Clients: {},
+};
